@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yawpitchroll.gif" translatesAutoresizingMaskIntoConstraints="NO" id="yIE-IP-Ark">
+                                <rect key="frame" x="220" y="205" width="160" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="1Y0-Xr-Q1k"/>
+                                    <constraint firstAttribute="height" constant="140" id="9gw-EL-drc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YAW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSm-Mz-Vik">
+                                <rect key="frame" x="252" y="171" width="57" height="34"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROLL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrW-bn-Y9B">
+                                <rect key="frame" x="156" y="345" width="64" height="34"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PITCH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi2-Cf-Ctu">
+                                <rect key="frame" x="388" y="261" width="73" height="34"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVt-Aw-smD">
+                                <rect key="frame" x="180" y="345" width="240" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Maa-iM-E2G"/>
+                                    <constraint firstAttribute="height" constant="240" id="wuU-X4-Ca9"/>
+                                </constraints>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bi2-Cf-Ctu" firstAttribute="top" secondItem="yIE-IP-Ark" secondAttribute="top" constant="56" id="1D2-Xi-1Yf"/>
+                            <constraint firstItem="yIE-IP-Ark" firstAttribute="leading" secondItem="XrW-bn-Y9B" secondAttribute="trailing" id="1Gw-BQ-MWA"/>
+                            <constraint firstItem="XrW-bn-Y9B" firstAttribute="top" secondItem="yIE-IP-Ark" secondAttribute="bottom" id="2FK-QG-mpN"/>
+                            <constraint firstAttribute="centerX" secondItem="yIE-IP-Ark" secondAttribute="centerX" id="H4n-eP-OzN"/>
+                            <constraint firstItem="FVt-Aw-smD" firstAttribute="top" secondItem="yIE-IP-Ark" secondAttribute="bottom" id="LTh-6O-NAp"/>
+                            <constraint firstItem="Bi2-Cf-Ctu" firstAttribute="leading" secondItem="yIE-IP-Ark" secondAttribute="trailing" constant="8" id="OO0-O7-iLW"/>
+                            <constraint firstItem="yIE-IP-Ark" firstAttribute="top" secondItem="ZSm-Mz-Vik" secondAttribute="bottom" id="QcV-gB-Orf"/>
+                            <constraint firstAttribute="centerX" secondItem="FVt-Aw-smD" secondAttribute="centerX" id="dKP-U5-eag"/>
+                            <constraint firstItem="ZSm-Mz-Vik" firstAttribute="leading" secondItem="yIE-IP-Ark" secondAttribute="leading" constant="32" id="ptV-xN-733"/>
+                            <constraint firstAttribute="centerY" secondItem="yIE-IP-Ark" secondAttribute="centerY" constant="25" id="syW-J2-w6H"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pitchLabel" destination="Bi2-Cf-Ctu" id="nxH-73-yXW"/>
+                        <outlet property="rollLabel" destination="XrW-bn-Y9B" id="Itv-Zd-edH"/>
+                        <outlet property="scene" destination="FVt-Aw-smD" id="Dwr-Ur-BqQ"/>
+                        <outlet property="yawLabel" destination="ZSm-Mz-Vik" id="y9g-0O-iUX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="yawpitchroll.gif" width="238" height="207"/>
+    </resources>
 </document>
