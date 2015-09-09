@@ -15,8 +15,9 @@
 		A42155151B9A3545000F211F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42155131B9A3545000F211F /* LaunchScreen.xib */; };
 		A42155211B9A3545000F211F /* GyrogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A42155201B9A3545000F211F /* GyrogoTests.m */; };
 		A421552B1B9A35A9000F211F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421552A1B9A35A9000F211F /* CoreMotion.framework */; };
-		A421552D1B9A4EE7000F211F /* yawpitchroll.gif in Resources */ = {isa = PBXBuildFile; fileRef = A421552C1B9A4EE7000F211F /* yawpitchroll.gif */; };
 		A421552F1B9AA27C000F211F /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421552E1B9AA27C000F211F /* SceneKit.framework */; };
+		A42155331B9F6833000F211F /* grid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A42155321B9F6833000F211F /* grid.jpg */; };
+		A42155361B9FABD1000F211F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = A42155351B9FABD1000F211F /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,10 @@
 		A421551F1B9A3545000F211F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42155201B9A3545000F211F /* GyrogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GyrogoTests.m; sourceTree = "<group>"; };
 		A421552A1B9A35A9000F211F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		A421552C1B9A4EE7000F211F /* yawpitchroll.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = yawpitchroll.gif; path = ../../../../Downloads/yawpitchroll.gif; sourceTree = "<group>"; };
 		A421552E1B9AA27C000F211F /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		A42155321B9F6833000F211F /* grid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grid.jpg; path = ../../../../Downloads/grid.jpg; sourceTree = "<group>"; };
+		A42155341B9FABD1000F211F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		A42155351B9FABD1000F211F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +98,10 @@
 				A42155091B9A3545000F211F /* AppDelegate.m */,
 				A421550B1B9A3545000F211F /* ViewController.h */,
 				A421550C1B9A3545000F211F /* ViewController.m */,
+				A42155341B9FABD1000F211F /* Game.h */,
+				A42155351B9FABD1000F211F /* Game.m */,
 				A421550E1B9A3545000F211F /* Main.storyboard */,
-				A421552C1B9A4EE7000F211F /* yawpitchroll.gif */,
+				A42155321B9F6833000F211F /* grid.jpg */,
 				A42155111B9A3545000F211F /* Images.xcassets */,
 				A42155131B9A3545000F211F /* LaunchScreen.xib */,
 				A42155041B9A3545000F211F /* Supporting Files */,
@@ -211,8 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42155101B9A3545000F211F /* Main.storyboard in Resources */,
+				A42155331B9F6833000F211F /* grid.jpg in Resources */,
 				A42155151B9A3545000F211F /* LaunchScreen.xib in Resources */,
-				A421552D1B9A4EE7000F211F /* yawpitchroll.gif in Resources */,
 				A42155121B9A3545000F211F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +239,7 @@
 				A421550D1B9A3545000F211F /* ViewController.m in Sources */,
 				A421550A1B9A3545000F211F /* AppDelegate.m in Sources */,
 				A42155071B9A3545000F211F /* main.m in Sources */,
+				A42155361B9FABD1000F211F /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
