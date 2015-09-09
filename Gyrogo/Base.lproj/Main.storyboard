@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -57,10 +59,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r5I-Iy-8CA">
-                                <rect key="frame" x="16" y="539" width="568" height="2"/>
+                                <rect key="frame" x="16" y="95" width="568" height="2"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-Np-FLZ">
-                                <rect key="frame" x="550" y="28" width="34" height="61"/>
+                                <rect key="frame" x="284" y="28" width="300" height="61"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXV-if-7Bj">
+                                <rect key="frame" x="16" y="28" width="300" height="61"/>
                                 <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="52"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -68,17 +76,25 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="width" secondItem="zXV-if-7Bj" secondAttribute="height" multiplier="600:61" id="4iF-RI-5M7"/>
                             <constraint firstAttribute="centerX" secondItem="tEs-PG-7rp" secondAttribute="centerX" constant="-0.5" id="4pb-lb-hcJ"/>
+                            <constraint firstItem="r5I-Iy-8CA" firstAttribute="top" secondItem="ZdI-Np-FLZ" secondAttribute="bottom" constant="6" id="6XZ-Yi-cFM"/>
                             <constraint firstAttribute="leadingMargin" secondItem="7To-S3-vbm" secondAttribute="leading" id="6gm-w0-3Wq"/>
+                            <constraint firstItem="zXV-if-7Bj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7vq-x8-3qb"/>
+                            <constraint firstItem="FVt-Aw-smD" firstAttribute="width" secondItem="zXV-if-7Bj" secondAttribute="width" multiplier="2:1" id="9tK-B9-pZe"/>
                             <constraint firstItem="RQv-8b-Nxm" firstAttribute="top" secondItem="Bi2-Cf-Ctu" secondAttribute="bottom" constant="17" id="9xB-rW-aGR"/>
+                            <constraint firstItem="FVt-Aw-smD" firstAttribute="width" secondItem="ZdI-Np-FLZ" secondAttribute="width" id="C5p-ot-XoI"/>
+                            <constraint firstItem="FVt-Aw-smD" firstAttribute="width" secondItem="ZdI-Np-FLZ" secondAttribute="width" multiplier="2:1" id="CKf-7R-hau"/>
                             <constraint firstItem="tEs-PG-7rp" firstAttribute="top" secondItem="ZSm-Mz-Vik" secondAttribute="bottom" constant="17" id="F8n-wZ-kel"/>
                             <constraint firstItem="FVt-Aw-smD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H3M-Cd-Qd1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FVt-Aw-smD" secondAttribute="bottom" id="IaK-xR-KI7"/>
-                            <constraint firstItem="tEs-PG-7rp" firstAttribute="top" secondItem="r5I-Iy-8CA" secondAttribute="bottom" constant="17" id="LzS-eU-mc5"/>
+                            <constraint firstItem="tEs-PG-7rp" firstAttribute="top" secondItem="r5I-Iy-8CA" secondAttribute="bottom" constant="400" id="LzS-eU-mc5"/>
+                            <constraint firstItem="zXV-if-7Bj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V2h-Nc-ewe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FVt-Aw-smD" secondAttribute="bottom" id="V4c-pn-Knx"/>
                             <constraint firstItem="r5I-Iy-8CA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VI3-zc-1XX"/>
                             <constraint firstItem="ZdI-Np-FLZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Z9R-Sf-voC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7To-S3-vbm" secondAttribute="bottom" constant="8" id="ZWh-iH-9bG"/>
+                            <constraint firstItem="r5I-Iy-8CA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="aMa-K5-roe"/>
                             <constraint firstItem="7To-S3-vbm" firstAttribute="top" secondItem="XrW-bn-Y9B" secondAttribute="bottom" constant="17" id="cUK-gK-x2P"/>
                             <constraint firstItem="Bi2-Cf-Ctu" firstAttribute="trailing" secondItem="RQv-8b-Nxm" secondAttribute="trailing" id="eie-qK-XRZ"/>
                             <constraint firstItem="r5I-Iy-8CA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gul-Yr-Ysq"/>
@@ -90,9 +106,20 @@
                             <constraint firstItem="FVt-Aw-smD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="v2m-uu-scz"/>
                             <constraint firstAttribute="trailing" secondItem="FVt-Aw-smD" secondAttribute="trailing" id="wZT-vv-LnQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tEs-PG-7rp" secondAttribute="bottom" constant="8" id="yXi-Zd-8pg"/>
+                            <constraint firstAttribute="width" secondItem="zXV-if-7Bj" secondAttribute="width" id="yjh-gS-B2T"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="C5p-ot-XoI"/>
+                                <exclude reference="4iF-RI-5M7"/>
+                                <exclude reference="yjh-gS-B2T"/>
+                                <exclude reference="aMa-K5-roe"/>
+                                <exclude reference="LzS-eU-mc5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="longestStreakLabel" destination="zXV-if-7Bj" id="1oW-ng-Zwq"/>
                         <outlet property="pitchLabel" destination="Bi2-Cf-Ctu" id="nxH-73-yXW"/>
                         <outlet property="rollLabel" destination="XrW-bn-Y9B" id="Itv-Zd-edH"/>
                         <outlet property="scene" destination="FVt-Aw-smD" id="Dwr-Ur-BqQ"/>

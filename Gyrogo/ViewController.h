@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *pitchLabel;
 @property (strong, nonatomic) IBOutlet SCNView *scene;
 @property (strong, nonatomic) IBOutlet UILabel *streakLabel;
+@property (strong, nonatomic) IBOutlet UILabel *longestStreakLabel;
 @property (strong, nonatomic) IBOutlet UIProgressView *timerProgress;
 @property (strong, nonatomic) SCNBox *phoneBox;
 @property (strong, nonatomic) SCNNode *phoneNode;

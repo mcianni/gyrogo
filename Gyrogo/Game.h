@@ -12,6 +12,7 @@
 
 - (void)timesUp;
 - (void)updateProgress:(float)progress;
+- (void)newHighScore:(int)score;
 
 @end
 
@@ -24,5 +25,6 @@
 - (void)start;
 - (void)end;
 - (int)gotOneRight;
+- (int)longestStreak;
 
 @end

@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
@@ -18,6 +17,8 @@
     [super viewDidLoad];
     _game = [[Game alloc] init];
     [_game setDelegate:self];
+    
+    [_longestStreakLabel setText:[NSString stringWithFormat:@"%i", [_game longestStreak]]];
     
     SCNScene *scn = [[SCNScene alloc] init];
     _phoneBox = [SCNBox boxWithWidth:5.0 height:0.8 length:12.0 chamferRadius:1.0];
@@ -33,41 +34,12 @@
 
     [scn.rootNode addChildNode:_phoneNode];
     [scn.rootNode addChildNode:_currentPhoneNode];
-    
-    float planeHeight = 50.0;
-    float planeWidth  = 50.0;
-    
-    SCNPlane *xPlane = [SCNPlane planeWithWidth:planeWidth height:planeHeight];
-    xPlane.firstMaterial.doubleSided = YES;
-    xPlane.firstMaterial.diffuse.contents = [UIColor yellowColor];
-    SCNPlane *yPlane = [SCNPlane planeWithWidth:planeWidth height:planeHeight];
-    yPlane.firstMaterial.doubleSided = YES;
-    yPlane.firstMaterial.diffuse.contents = [UIColor greenColor];
-    SCNPlane *zPlane = [SCNPlane planeWithWidth:planeWidth height:planeHeight];
-    zPlane.firstMaterial.doubleSided = YES;
-    zPlane.firstMaterial.diffuse.contents = [UIColor blueColor];
-    
-    SCNNode *xPlaneNode = [SCNNode nodeWithGeometry:xPlane];
-    xPlaneNode.pivot = SCNMatrix4MakeTranslation(-planeWidth/2, 0, 0);
-    xPlaneNode.rotation = SCNVector4Make(1, 0, 0, M_PI_2);
-    SCNNode *yPlaneNode = [SCNNode nodeWithGeometry:yPlane];
-    yPlaneNode.pivot = SCNMatrix4MakeTranslation(0, -planeHeight/2, 0);
-    yPlaneNode.rotation = SCNVector4Make(0, 1, 0, M_PI_2);
-    
-    SCNNode *zPlaneNode = [SCNNode nodeWithGeometry:zPlane];
-    zPlaneNode.pivot = SCNMatrix4MakeTranslation(-planeWidth/2, -planeHeight/2, planeHeight/2);
-    zPlaneNode.position = SCNVector3Zero;
-    //zPlaneNode.rotation = SCNVector4Make(0, 0, 1, M_PI_2);
-    
-    [scn.rootNode addChildNode:xPlaneNode];
-    [scn.rootNode addChildNode:yPlaneNode];
-    [scn.rootNode addChildNode:zPlaneNode];
-    
+
     _scene.scene = scn;
     
     SCNCamera *camera = [SCNCamera camera];
     SCNNode *cameraNode = [SCNNode node];
-    cameraNode.position = SCNVector3Make(5, 16, 40);
+    cameraNode.position = SCNVector3Make(5, 16, 30);
     
     cameraNode.camera = camera;
     [scn.rootNode addChildNode:cameraNode];
@@ -91,10 +63,38 @@
     [_game start];
     [self randomizeAngles];
     [self startReceivingMotionUpdates];
+    [_streakLabel setText:@"0"];
 }
 
 - (void)setupPlanes
 {
+    float planeHeight = 50.0;
+    float planeWidth  = 50.0;
+    SCNPlane *xPlane = [SCNPlane planeWithWidth:planeWidth height:planeHeight];
+    xPlane.firstMaterial.doubleSided = YES;
+    xPlane.firstMaterial.diffuse.contents = [UIColor yellowColor];
+    SCNPlane *yPlane = [SCNPlane planeWithWidth:planeWidth height:planeHeight];
+    yPlane.firstMaterial.doubleSided = YES;
+    yPlane.firstMaterial.diffuse.contents = [UIColor greenColor];
+    SCNPlane *zPlane = [SCNPlane planeWithWidth:planeWidth height:planeHeight];
+    zPlane.firstMaterial.doubleSided = YES;
+    zPlane.firstMaterial.diffuse.contents = [UIColor blueColor];
+    
+    SCNNode *xPlaneNode = [SCNNode nodeWithGeometry:xPlane];
+    xPlaneNode.pivot = SCNMatrix4MakeTranslation(-planeWidth/2, 0, 0);
+    xPlaneNode.rotation = SCNVector4Make(1, 0, 0, M_PI_2);
+    SCNNode *yPlaneNode = [SCNNode nodeWithGeometry:yPlane];
+    yPlaneNode.pivot = SCNMatrix4MakeTranslation(0, -planeHeight/2, 0);
+    yPlaneNode.rotation = SCNVector4Make(0, 1, 0, M_PI_2);
+    
+    SCNNode *zPlaneNode = [SCNNode nodeWithGeometry:zPlane];
+    zPlaneNode.pivot = SCNMatrix4MakeTranslation(-planeWidth/2, -planeHeight/2, planeHeight/2);
+    zPlaneNode.position = SCNVector3Zero;
+    //zPlaneNode.rotation = SCNVector4Make(0, 0, 1, M_PI_2);
+    
+    [_scene.scene.rootNode addChildNode:xPlaneNode];
+    [_scene.scene.rootNode addChildNode:yPlaneNode];
+    [_scene.scene.rootNode addChildNode:zPlaneNode];
 }
 
 - (void)updateMotion:(CMDeviceMotion *)motion
@@ -185,12 +185,16 @@
 {
     [_timerProgress setTintColor:[UIColor redColor]];
     [_motionManager stopDeviceMotionUpdates];
-    [_streakLabel setText:@"0"];
 }
 
 - (void)updateProgress:(float)progress
 {
     [_timerProgress setProgress:progress];
+}
+
+- (void)newHighScore:(int)score
+{
+    [_longestStreakLabel setText:[NSString stringWithFormat:@"%i", score]];
 }
 
 @end

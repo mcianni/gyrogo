@@ -36,6 +36,7 @@
 {
     NSLog(@"[GAME] - end");
     [timer invalidate];
+    [self saveHighScore];
 }
 
 - (void)resetTimer
@@ -50,6 +51,22 @@
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
+- (void)saveHighScore
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger longestStreak = [defaults integerForKey:@"LongestStreak"];
+    if (streak > longestStreak) {
+        [defaults setInteger:streak forKey:@"LongestStreak"];
+        [defaults synchronize];
+        [_delegate newHighScore:streak];
+    }
+}
+
+- (int)longestStreak
+{
+    return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"LongestStreak"];
+}
+
 - (int)gotOneRight
 {
     [self resetTimer];
@@ -62,6 +79,7 @@
     if (elapsedTime >= timeLimit) {
         [timer invalidate];
         [_delegate timesUp];
+        [self saveHighScore];
     } else {
         [_delegate updateProgress:(elapsedTime/timeLimit)];
     }
